@@ -1,0 +1,19 @@
+.container_footer {
+	display: flex;
+	justify-content: center;
+	background-color: #000000;
+	color: white;
+
+	.wrapper_footer {
+		display: flex;
+		justify-content: space-between;
+
+		width: 1170px;
+
+		.contacts {
+		}
+
+		.map {
+		}
+	}
+}
