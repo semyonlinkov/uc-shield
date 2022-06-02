@@ -1,0 +1,40 @@
+.menu {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	transform: translateX(-130%);
+	transition: all 0.2s;
+	z-index: 50;
+
+	.menu__content {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start;
+		width: 30%;
+		height: 100%;
+		background-color: rgb(41, 49, 58);
+		transition: all 0.4s;
+
+		ul {
+			margin: 10px 0;
+			padding: 0;
+		}
+	}
+
+	@media screen and (max-width: 992px) {
+		.menu__content {
+			width: 67%;
+		}
+	}
+
+	ul li a {
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.active {
+	transform: translateX(0);
+}

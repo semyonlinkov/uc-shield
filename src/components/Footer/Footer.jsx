@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './Footer.module.scss';
-import ImgMap from '../img/map.PNG';
+import ImgMap from '../../img/map.PNG';
 
 const Footer = () => {
 	const mapWrap = useRef(null);

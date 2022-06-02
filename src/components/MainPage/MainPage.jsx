@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './MainPage.module.scss';
-import ImgDoc from '../img/docs.png';
-import ImgLearn from '../img/learn.png';
-import ImgDirections from '../img/directions.png';
-import ImgLicense from '../img/driver-license.png';
-import ImgDiplom1 from '../img/1.jpg';
-import ImgDiplom2 from '../img/2.jpg';
-import ImgDiplom3 from '../img/3.jpg';
+import ImgDoc from '../../img/docs.png';
+import ImgLearn from '../../img/learn.png';
+import ImgDirections from '../../img/directions.png';
+import ImgLicense from '../../img/driver-license.png';
+import ImgDiplom1 from '../../img/1.jpg';
+import ImgDiplom2 from '../../img/2.jpg';
+import ImgDiplom3 from '../../img/3.jpg';
 
 const MainPage = () => {
 	return (
@@ -14,8 +14,11 @@ const MainPage = () => {
 			<div className={styles.container_main_img}>
 				<div className={styles.wrapper_main_img}>
 					<div className={styles.text_content}>
-						<h1>УЧЕБНЫЙ ЦЕНТР «ХУЙ ЗНАЕТ КАКОЙ»</h1>
-						<p>Учим-хуючим охранять там всю хуйню. Можно и не охранять, всем так-то похуй</p>
+						<h1>УЧЕБНЫЙ ЦЕНТР «ЩИТ»</h1>
+						<h3>
+							Автономная некоммерческая организация дополнительного профессионального образования "ЩИТ"
+							приглашает мужчин и женщин на обучение по специальности "частный охранник 4-5-6 разрада"
+						</h3>
 						<button>Записаться на обучение</button>
 					</div>
 				</div>
@@ -23,14 +26,18 @@ const MainPage = () => {
 			<div className={styles.container_docs_section}>
 				<div className={styles.wrapper_docs_section}>
 					<div className={styles.doc_block}>
-						<img src={ImgDoc} alt="document" />
+						<div>
+							<img src={ImgDoc} alt="document" />
+						</div>
 						<div className={styles.info}>
 							<h2>МЕТОДИЧЕСКОЕ ПОСОБИЕ</h2>
 							<p>для подготовки частных охранников с вопросами для проверки знаний и рекомендациями</p>
 						</div>
 					</div>
 					<div className={styles.doc_block}>
-						<img src={ImgDoc} alt="document" />
+						<div>
+							<img src={ImgDoc} alt="document" />
+						</div>
 						<div className={styles.info}>
 							<h2>МЕТОДИЧЕСКОЕ ПОСОБИЕ</h2>
 							<p>для подготовки частных охранников с вопросами для проверки знаний и рекомендациями</p>
@@ -59,23 +66,23 @@ const MainPage = () => {
 			<div className={styles.container_info_section2}>
 				<div className={styles.wrapper_info_section2}>
 					<div className={styles.info_block2}>
-						<p>Квалифицированные специалисты</p>
+						<h4>Квалифицированные специалисты</h4>
 						<img src={ImgLearn} alt="learn" />
 						<p>преподаватели и пенсионеры МВД, имеющие богатый опыт работы</p>
 					</div>
 					<div className={styles.info_block2}>
-						<p>Удобное месторасположение</p>
+						<h4>Удобное месторасположение</h4>
 						<img src={ImgDirections} alt="directions" />
 						<p>мы находимся почти в самом центре города</p>
 					</div>
 					<div className={styles.info_block2}>
-						<p>Гарантия трудоустройства</p>
+						<h4>Гарантия трудоустройства</h4>
 						<img src={ImgLicense} alt="license" />
 						<p>как в регионе, так и вахтовым методом на север</p>
 					</div>
 				</div>
 			</div>
-			<h2 className={styles.title}>Лицензии и свидетельства АНО ДПО "Щит"</h2>
+			<h2 className={styles.title_license}>Лицензии и свидетельства АНО ДПО "Щит"</h2>
 			<div className={styles.container_licensess_section}>
 				<div className={styles.wrapper_licensess_section}>
 					<div className={styles.license}>
@@ -123,9 +130,9 @@ const MainPage = () => {
 			<div className={styles.container_register}>
 				<div className={styles.wrapper_register}>
 					<h2>Записаться на обучение</h2>
-					<p>Ваше имя</p>
+					<p>Ваше имя:</p>
 					<input type="text" />
-					<p>Телефон</p>
+					<p>Телефон:</p>
 					<input type="text" />
 					<button>Отправить</button>
 				</div>

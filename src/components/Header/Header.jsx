@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import ImgShield from '../img/shield.png';
+import ImgShield from '../../img/shield.png';
 
-const Header = () => {
+const Header = ({ setActive, active }) => {
 	return (
 		<>
 			<div className={styles.container_contacts}>
 				<div className={styles.wrapper_contacts}>
 					<div className={styles.phone}>
-						<p>Телефон: 111-111-11-11</p>
+						<p>т. 111-111-11-11</p>
 					</div>
 					<div className={styles.address}>
 						<p>г.Астрахань ул.Боевая 38</p>
@@ -27,6 +27,11 @@ const Header = () => {
 						<li>Цены</li>
 						<li>Контакты</li>
 					</ul>
+				</div>
+				<div className={styles.burger_wrapper} onClick={() => setActive((prev) => !prev)}>
+					<div className={styles.burger_btn}>
+						<span />
+					</div>
 				</div>
 			</div>
 		</>
