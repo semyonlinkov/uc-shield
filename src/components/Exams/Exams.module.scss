@@ -1,0 +1,47 @@
+.container_exams {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.wrapper_exams {
+		width: 1170px;
+	}
+
+	.table {
+		display: flex;
+
+		grid-template-columns: 3fr 1fr;
+		grid-template-rows: 1fr 1fr 1fr;
+	}
+
+	.table {
+		display: grid;
+		grid-template-columns: 3fr, 1fr;
+		grid-template-rows: repeat(3, 1fr);
+		grid-column-gap: 0px;
+		grid-row-gap: 0px;
+		border: 1px solid gray;
+
+		* {
+			display: flex;
+			align-items: center;
+			border: 1px solid gray;
+			padding: 0 5px;
+		}
+
+		div:nth-child(1) {
+			grid-area: 1 / 1 / 2 / 2;
+		}
+		div:nth-child(2) {
+			grid-area: 2 / 1 / 3 / 2;
+		}
+		div:nth-child(3) {
+			grid-area: 3 / 1 / 4 / 2;
+		}
+		div:nth-child(4) {
+			grid-area: 1 / 2 / 4 / 3;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}

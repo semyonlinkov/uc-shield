@@ -4,9 +4,10 @@ import ImgDoc from '../../img/docs.png';
 import ImgLearn from '../../img/learn.png';
 import ImgDirections from '../../img/directions.png';
 import ImgLicense from '../../img/driver-license.png';
-import ImgDiplom1 from '../../img/1.jpg';
-import ImgDiplom2 from '../../img/2.jpg';
-import ImgDiplom3 from '../../img/3.jpg';
+import ImgDiploma1 from '../../img/1.jpg';
+import ImgDiploma2 from '../../img/2.jpg';
+import ImgDiploma3 from '../../img/3.jpg';
+import { Image } from 'antd';
 
 const MainPage = () => {
 	return (
@@ -14,10 +15,21 @@ const MainPage = () => {
 			<div className={styles.container_main_img}>
 				<div className={styles.wrapper_main_img}>
 					<div className={styles.text_content}>
-						<h1>УЧЕБНЫЙ ЦЕНТР «ЩИТ»</h1>
-						<h3>
-							Автономная некоммерческая организация дополнительного профессионального образования "ЩИТ"
-							приглашает мужчин и женщин на обучение по специальности "частный охранник 4-5-6 разрада"
+						<h1
+							style={{
+								color: 'white',
+								textShadow: '2px 2px 3px #000000',
+								marginBottom: '10px',
+								fontWeight: 700,
+							}}>
+							УЧЕБНЫЙ ЦЕНТР «ЩИТ»
+						</h1>
+						<h3 style={{ color: 'white', textShadow: '2px 2px 3px #000000' }}>
+							Частное образовательное учреждения дополнительного профессионального образования Учебный центр
+							«Щит» осуществляет свою деятельность на рынке образовательных услуг Астраханской области уже в
+							течении 13 лет. За это время Учебный центр «Щит» зарекомендовал себя как успешное образовательное
+							учреждение по подготовке лиц, работающих в сфере охранной деятельности (частных охранников 4, 5, 6
+							разрядов).
 						</h3>
 						<button>Записаться на обучение</button>
 					</div>
@@ -86,13 +98,13 @@ const MainPage = () => {
 			<div className={styles.container_licensess_section}>
 				<div className={styles.wrapper_licensess_section}>
 					<div className={styles.license}>
-						<img src={ImgDiplom1} alt="license" />
+						<Image src={ImgDiploma1} />
 					</div>
 					<div className={styles.license}>
-						<img src={ImgDiplom2} alt="license" />
+						<Image src={ImgDiploma2} />
 					</div>
 					<div className={styles.license}>
-						<img src={ImgDiplom3} alt="license" />
+						<Image src={ImgDiploma3} />
 					</div>
 				</div>
 			</div>

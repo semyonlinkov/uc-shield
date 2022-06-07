@@ -1,0 +1,11 @@
+.container_documents {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.wrapper_documents {
+		display: flex;
+		flex-direction: column;
+		width: 1170px;
+	}
+}

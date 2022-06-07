@@ -1,0 +1,21 @@
+.aboutUs_container {
+	margin-bottom: 15px;
+	.aboutUs_wrapper {
+		margin: 0 auto;
+		max-width: 1170px;
+	}
+
+	h4 {
+		margin-bottom: 10px;
+	}
+
+	ul {
+		padding-left: 15px;
+		li::before {
+			position: relative;
+			content: '●';
+			right: 3px;
+			bottom: 2px;
+		}
+	}
+}

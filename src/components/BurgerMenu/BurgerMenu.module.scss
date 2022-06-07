@@ -11,15 +11,19 @@
 	.menu__content {
 		display: flex;
 		justify-content: center;
-		align-items: flex-start;
+		// align-items: flex-start;
+		font-size: 1.4rem;
 		width: 30%;
 		height: 100%;
 		background-color: rgb(41, 49, 58);
 		transition: all 0.4s;
 
 		ul {
-			margin: 10px 0;
+			margin: 25px 0;
 			padding: 0;
+			li {
+				padding: 15px;
+			}
 		}
 	}
 

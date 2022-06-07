@@ -1,11 +1,10 @@
 .container_main_img {
 	.wrapper_main_img {
-		// height: 400px;
 		padding-top: 170px;
 		padding-right: 0px;
 		padding-bottom: 170px;
 		padding-left: 0px;
-		background-image: url(/img/slide01.jpg);
+		background: linear-gradient(rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.726)), url(/img/slide01.jpg);
 		background-repeat: no-repeat;
 		background-size: cover;
 		background-attachment: fixed;
@@ -220,7 +219,7 @@
 .container_price {
 	display: flex;
 	justify-content: center;
-	padding: 0 5px;
+	padding: 0 3px;
 
 	.wrapper_price {
 		display: flex;
@@ -230,14 +229,16 @@
 
 		.table {
 			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+			grid-template-columns: repeat(3, 1fr);
+			grid-template-rows: repeat(8, 1fr);
+
 			border: 1px solid gray;
 			margin-bottom: 30px;
 
 			div {
-				text-align: center;
+				text-align: left;
 				border: 1px solid gray;
+				padding: 3px 5px;
 			}
 		}
 	}
@@ -258,6 +259,7 @@
 		h2 {
 			align-self: center;
 			margin: 15px 0;
+			font-weight: 700;
 		}
 
 		p {

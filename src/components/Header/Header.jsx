@@ -1,8 +1,14 @@
 import React from 'react';
 import styles from './Header.module.scss';
-import ImgShield from '../../img/shield.png';
+import ImgLogo from '../../img/volga-shield-logo-500.png';
+import { Link, useNavigate } from 'react-router-dom';
+import ImgBurger from '../../img/burgerMenu64.png';
+import ImgClose from '../../img/closeCross64.png';
+import { Dropdown, Menu, Space } from 'antd';
 
-const Header = ({ setActive, active }) => {
+const Header = ({ active, setActive }) => {
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<div className={styles.container_contacts}>
@@ -17,21 +23,50 @@ const Header = ({ setActive, active }) => {
 			</div>
 			<div className={styles.container_main_info}>
 				<div className={styles.wrapper_main_info}>
-					<div className={styles.logo}>
-						<img src={ImgShield} alt="shield-logo" />
-						<p>Название компании</p>
+					<div className={styles.logo} onClick={() => navigate('/')}>
+						<img src={ImgLogo} alt="shield-logo" />
+						<p>Учебный центр "ЩИТ"</p>
 					</div>
 					<ul className={styles.links}>
-						<li>О нас</li>
-						<li>Обучение</li>
-						<li>Цены</li>
-						<li>Контакты</li>
+						<li>
+							<Link to="/">Главная</Link>
+						</li>
+						<li>
+							<Link to="/about">О нас</Link>
+						</li>
+						<li>
+							<Dropdown
+								placement="bottom"
+								overlay={
+									<Menu
+										items={[
+											{
+												label: <Link to="/docs">Документы для поступления</Link>,
+												key: '0',
+											},
+											{
+												label: <Link to="/exams">Порядок сдачи экзамена</Link>,
+												key: '1',
+											},
+										]}
+									/>
+								}
+								trigger={['click', 'hover']}>
+								<Space>
+									<Link to="/education">Обучение ⮟</Link>
+								</Space>
+							</Dropdown>
+						</li>
+						<li>
+							<Link to="/prices">Цены</Link>
+						</li>
+						<li>
+							<Link to="/contacts">Контакты</Link>
+						</li>
 					</ul>
 				</div>
 				<div className={styles.burger_wrapper} onClick={() => setActive((prev) => !prev)}>
-					<div className={styles.burger_btn}>
-						<span />
-					</div>
+					{active ? <img src={ImgClose} alt="" /> : <img src={ImgBurger} alt="" />}
 				</div>
 			</div>
 		</>
