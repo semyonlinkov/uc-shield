@@ -14,10 +14,10 @@ const Header = ({ active, setActive }) => {
 			<div className={styles.container_contacts}>
 				<div className={styles.wrapper_contacts}>
 					<div className={styles.phone}>
-						<p>т. 111-111-11-11</p>
+						<p>т. 8 967-331-72-27</p>
 					</div>
 					<div className={styles.address}>
-						<p>г.Астрахань ул.Боевая 38</p>
+						<p>г.Астрахань ул.Боевая 38 литер А</p>
 					</div>
 				</div>
 			</div>
@@ -52,9 +52,7 @@ const Header = ({ active, setActive }) => {
 									/>
 								}
 								trigger={['click', 'hover']}>
-								<Space>
-									<Link to="/education">Обучение ⮟</Link>
-								</Space>
+								<p style={{ padding: '10px' }}>Обучение ⮟</p>
 							</Dropdown>
 						</li>
 						<li>

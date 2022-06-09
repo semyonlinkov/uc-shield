@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './BurgerMenu.module.scss';
 
-const BurgerMenu = ({ header, items, active, setActive }) => {
+const BurgerMenu = ({ active, setActive }) => {
+	const [isOpen, setIsOpen] = useState(false);
+
 	return (
 		<div className={active ? `${styles.menu} ${styles.active}` : styles.menu} onClick={() => setActive(false)}>
 			<div
@@ -10,11 +12,39 @@ const BurgerMenu = ({ header, items, active, setActive }) => {
 				// onClick={(e) => e.stopPropagation()}
 			>
 				<ul>
-					{items.map((item) => (
-						<li>
-							<Link to={item.href}>{item.value}</Link>
-						</li>
-					))}
+					<li>
+						<Link to={'/'}>Главная</Link>
+					</li>
+					<li>
+						<Link to={'/about'}>О Нас</Link>
+					</li>
+					<li
+						onClick={(e) => {
+							e.stopPropagation();
+							setIsOpen((prev) => !prev);
+						}}>
+						<p style={{ color: 'white' }}>Обучение {isOpen ? '⮝' : '⮟'}</p>
+					</li>
+					{isOpen && (
+						<>
+							<li style={{ fontSize: '0.8rem', paddingLeft: '30px' }}>
+								<Link to={'/docs'} onClick={() => setIsOpen(false)}>
+									Документы для поступления
+								</Link>
+							</li>
+							<li style={{ fontSize: '0.8rem', paddingLeft: '30px' }}>
+								<Link to={'/exams'} onClick={() => setIsOpen(false)}>
+									Порядок сдачи экзамена
+								</Link>
+							</li>
+						</>
+					)}
+					<li>
+						<Link to={'/prices'}>Цены</Link>
+					</li>
+					<li>
+						<Link to={'/contacts'}>Контакты</Link>
+					</li>
 				</ul>
 			</div>
 		</div>

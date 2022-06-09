@@ -24,12 +24,24 @@ const Footer = () => {
 			<div className={styles.wrapper_footer}>
 				<div className={styles.contacts}>
 					<h2 style={{ color: 'white', textAlign: 'start' }}>Контакты</h2>
-					<p>Заместитель директора Декельбаум: Глеб Алексеевич 8 908-105-15-70</p>
-					<p>Директор: Чернов Эдуард Викторович 8 913-628-84-34</p>
-					<p>Россия, 644043, г. Омск, ул. Щербанёва, д. 25 (цоколь) офис 001</p>
-					<p>Связаться с нами Телефон: (3812) 28-84-34 / 51-01-79</p>
-					<p>Сайт: www.dpo-shit.ru</p>
-					<p>E-mail: college-sisk@hotmail.com</p>
+					<p>
+						<strong>Заместитель директора:</strong> Назаров Ильяс Зульбахарович 8 967-331-61-07
+					</p>
+					<p>
+						<strong>Директор:</strong> Михайлов Андрей Николаевич 8 967-331-72-21
+					</p>
+					<p>
+						<strong>Адрес:</strong> Россия, 414000, г.Астрахань ул.Боевая 38 литер А
+					</p>
+					<p>
+						<strong>Связаться с нами Телефон:</strong> 8 905-363-46-51 / 8 967-331-72-27
+					</p>
+					<p>
+						<strong>Сайт:</strong> www.uc-shield.ru
+					</p>
+					<p>
+						<strong>E-mail: </strong>
+					</p>
 				</div>
 				<div ref={mapWrap} className={styles.map}></div>
 			</div>

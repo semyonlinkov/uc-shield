@@ -15,18 +15,10 @@ import Exams from './components/Exams/Exams';
 function App() {
 	const [burgerActive, setBurgerActive] = useState(false);
 
-	const items = [
-		{ value: 'Главная', href: '/' },
-		{ value: 'О Нас', href: '/about' },
-		{ value: 'Обучение', href: '/education' },
-		{ value: 'Цены', href: '/prices' },
-		{ value: 'Контакты', href: '/contacts' },
-	]
-
 	return (
 		<>
 			<BrowserRouter>
-				<BurgerMenu active={burgerActive} setActive={setBurgerActive} header={'Меню'} items={items} />
+				<BurgerMenu active={burgerActive} setActive={setBurgerActive} />
 				<Header active={burgerActive} setActive={setBurgerActive} />
 				<Routes>
 					<Route path='/' element={<MainPage />} />
@@ -35,7 +27,7 @@ function App() {
 					<Route path='/docs' element={<Documents />} />
 					<Route path='/exams' element={<Exams />} />
 					<Route path='/prices' element={<Prices />} />
-					<Route path='/contacts' element={<h1>CONTACTS</h1>} />
+					<Route path='/contacts' element={<></>} />
 				</Routes>
 				<Footer />
 				<ScrollButton />

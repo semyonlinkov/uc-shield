@@ -3,20 +3,19 @@ h2 {
 	text-align: center;
 }
 
+h1 {
+	padding: 15px;
+	font-weight: 700;
+}
+
 .container_prices {
 	display: flex;
 	justify-content: center;
-
-	h1 {
-		font-weight: 700;
-		margin-bottom: 20px;
-	}
-
-	h2 {
-		margin-bottom: 12px;
-	}
-
 	.wrapper_prices {
+		h2 {
+			margin-bottom: 12px;
+		}
+
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
