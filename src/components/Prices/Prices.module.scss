@@ -11,6 +11,8 @@ h1 {
 .container_prices {
 	display: flex;
 	justify-content: center;
+	margin: 0 10px 10px 10px;
+
 	.wrapper_prices {
 		h2 {
 			margin-bottom: 12px;
@@ -28,12 +30,37 @@ h1 {
 			grid-template-rows: 1fr;
 
 			border: 1px solid gray;
-			margin-bottom: 25px;
+			margin-bottom: 15px;
 
 			div {
 				text-align: left;
 				border: 1px solid gray;
 				padding: 3px 5px;
+
+				&:nth-child(3n) {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				&:nth-child(3n - 1) {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				&:nth-child(1) {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				&:nth-child(1) {
+					font-weight: 700;
+				}
+				&:nth-child(2) {
+					font-weight: 700;
+				}
+				&:nth-child(3) {
+					font-weight: 700;
+				}
 			}
 		}
 	}

@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import styles from './Footer.module.scss';
-import ImgMap from '../../img/map.PNG';
 
 const Footer = () => {
 	const mapWrap = useRef(null);
@@ -25,22 +24,31 @@ const Footer = () => {
 				<div className={styles.contacts}>
 					<h2 style={{ color: 'white', textAlign: 'start' }}>Контакты</h2>
 					<p>
-						<strong>Заместитель директора:</strong> Назаров Ильяс Зульбахарович 8 967-331-61-07
+						<strong>Директор:</strong>
+						<p>
+							Михайлов Андрей Николаевич <a href="tel:8 967-331-72-27">8 967-331-72-27</a>
+						</p>
 					</p>
 					<p>
-						<strong>Директор:</strong> Михайлов Андрей Николаевич 8 967-331-72-21
+						<strong>Заместитель директора:</strong>
+						<p>
+							Назаров Ильяс Зульбухарович <a href="tel:8 905-363-46-51">8 905-363-46-51</a>
+						</p>
 					</p>
 					<p>
-						<strong>Адрес:</strong> Россия, 414000, г.Астрахань ул.Боевая 38 литер А
+						<strong>Адрес:</strong>
+						<p>Россия, 414000, г.Астрахань ул.Боевая 38 литер А</p>
 					</p>
 					<p>
-						<strong>Связаться с нами Телефон:</strong> 8 905-363-46-51 / 8 967-331-72-27
+						<br />
+						<strong>Телефоны: </strong>
+						<a href="tel:8 905-363-46-51">8 905-363-46-51</a> / <a href="tel:8 967-331-72-27">8 967-331-72-27</a>
 					</p>
 					<p>
-						<strong>Сайт:</strong> www.uc-shield.ru
+						<strong>Сайт:</strong> shield-centr.ru
 					</p>
 					<p>
-						<strong>E-mail: </strong>
+						<strong>E-mail: uc@shield-centr.ru</strong>
 					</p>
 				</div>
 				<div ref={mapWrap} className={styles.map}></div>

@@ -37,6 +37,16 @@ const BurgerMenu = ({ active, setActive }) => {
 									Порядок сдачи экзамена
 								</Link>
 							</li>
+							<li style={{ fontSize: '0.8rem', paddingLeft: '30px' }}>
+								<Link to={'/fire-safety'} onClick={() => setIsOpen(false)}>
+									Пожарно-технический минимум
+								</Link>
+							</li>
+							<li style={{ fontSize: '0.8rem', paddingLeft: '30px' }}>
+								<Link to={'/crew-training'} onClick={() => setIsOpen(false)}>
+									Обучение плавсоства
+								</Link>
+							</li>
 						</>
 					)}
 					<li>

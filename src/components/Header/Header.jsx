@@ -48,6 +48,14 @@ const Header = ({ active, setActive }) => {
 												label: <Link to="/exams">Порядок сдачи экзамена</Link>,
 												key: '1',
 											},
+											{
+												label: <Link to="/fire-safety">Пожарно-технический минимум</Link>,
+												key: '2',
+											},
+											{
+												label: <Link to="/crew-training">Обучение плавсоства</Link>,
+												key: '3',
+											},
 										]}
 									/>
 								}

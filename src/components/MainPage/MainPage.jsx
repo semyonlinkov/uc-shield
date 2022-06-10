@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styles from './MainPage.module.scss';
 import ImgDoc from '../../img/pdf128.png';
 import ImgLearn from '../../img/learn.png';
@@ -25,24 +25,34 @@ import IMGCarousel7 from '../../img/ucZal.jpg';
 import IMGTir1 from '../../img/tir1.jpg';
 import IMGTir2 from '../../img/tir2.jpg';
 import IMGTir3 from '../../img/tir3.jpg';
+import IMGTir4 from '../../img/tir2.jpeg';
+import IMGTir5 from '../../img/tir3.jpeg';
 
-import { Carousel, Image } from 'antd';
+import { Carousel, Image, message } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 const MainPage = () => {
+	const [name, setName] = useState('');
+	const [phone, setPhone] = useState('');
+	const ref = useRef(null);
+	const navigate = useNavigate();
+
 	return (
 		<>
 			<div className={styles.container_main_img}>
 				<div className={styles.wrapper_main_img}>
 					<div className={styles.text_content}>
 						<h1 style={{ color: 'white' }}>УЧЕБНЫЙ ЦЕНТР «ЩИТ»</h1>
-						<h3 style={{ color: 'white' }}>
+						<h3 style={{ color: 'white', padding: '0 10px' }}>
 							Частное образовательное учреждения дополнительного профессионального образования Учебный центр
 							«Щит» осуществляет свою деятельность на рынке образовательных услуг Астраханской области уже в
 							течении 13 лет. За это время Учебный центр «Щит» зарекомендовал себя как успешное образовательное
 							учреждение по подготовке лиц, работающих в сфере охранной деятельности (частных охранников 4, 5, 6
 							разрядов).
 						</h3>
-						<button>Записаться на обучение</button>
+						<button onClick={() => window.scrollTo(0, ref.current.offsetTop - 200)}>
+							Записаться на обучение
+						</button>
 					</div>
 				</div>
 			</div>
@@ -70,13 +80,13 @@ const MainPage = () => {
 			<div className={styles.container_info_section}>
 				<div className={styles.wrapper_info_section}>
 					<div className={styles.carousel}>
-						<Carousel autoplay>
-							<img src={IMGCarousel6} alt="pic-6" />
-							<img src={IMGCarousel5} alt="pic-5" />
-							<img src={IMGCarousel1} alt="pic-1" />
-							<img src={IMGCarousel3} alt="pic-3" />
-							<img src={IMGCarousel4} alt="pic-4" />
-							<img src={IMGCarousel7} alt="pic-7" />
+						<Carousel preview={{ visible: false }} autoplay>
+							<Image src={IMGCarousel6} />
+							<Image src={IMGCarousel5} />
+							<Image src={IMGCarousel1} />
+							<Image src={IMGCarousel3} />
+							<Image src={IMGCarousel4} />
+							<Image src={IMGCarousel7} />
 						</Carousel>
 					</div>
 					<div className={styles.info}>
@@ -112,9 +122,11 @@ const MainPage = () => {
 				<div className={styles.wrapper_info_section3}>
 					<div className={styles.carousel}>
 						<Carousel autoplay>
-							<img src={IMGTir3} alt="pic-3" />
-							<img src={IMGTir2} alt="pic-2" />
-							<img src={IMGTir1} alt="pic-1" />
+							<Image src={IMGTir3} alt="pic-3" />
+							<Image src={IMGTir2} alt="pic-2" />
+							<Image src={IMGTir1} alt="pic-1" />
+							<Image src={IMGTir4} alt="pic-4" />
+							<Image src={IMGTir5} alt="pic-5" />
 						</Carousel>
 					</div>
 					<div className={styles.info}>
@@ -134,19 +146,19 @@ const MainPage = () => {
 			</h2>
 			<div className={styles.container_addons}>
 				<div className={styles.wrapper_addons}>
-					<div className={styles.addon_block}>
+					<div className={styles.addon_block} onClick={() => navigate('/fire-safety')}>
 						<img src={IMGExting} alt="extinguisher" />
 						<h4>Пожарно-технический минимум</h4>
 						<img className={styles.chev} src={IMGChev} alt="chevron" />
 					</div>
 					<hr />
-					<div className={styles.addon_block}>
+					<div className={styles.addon_block} onClick={() => navigate('/crew-training')}>
 						<img src={IMGAnchor} alt="anchor" />
 						<h4>Обучение плавсоства</h4>
 						<img className={styles.chev} src={IMGChev} alt="chevron" />
 					</div>
 					<hr />
-					<div className={styles.addon_block}>
+					<div className={styles.addon_block} onClick={() => navigate('/weapon-training')}>
 						<img src={IMGTarget} alt="target" />
 						<h4>Обучение оружию</h4>
 						<img className={styles.chev} src={IMGChev} alt="chevron" />
@@ -203,13 +215,30 @@ const MainPage = () => {
 				</div>
 			</div>
 			<div className={styles.container_register}>
-				<div className={styles.wrapper_register}>
+				<div className={styles.wrapper_register} ref={ref}>
 					<h2>Записаться на обучение</h2>
 					<p>Ваше имя:</p>
-					<input type="text" />
+					<input type="text" value={name} onChange={(e) => setName(e.target.value)} />
 					<p>Телефон:</p>
-					<input type="text" />
-					<button>Отправить</button>
+					<input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} />
+					<button
+						onClick={() =>
+							fetch(`https://volga24bot.com/telegram/ucTelegram.php?name=${name}&phone=${phone}`)
+								.then((res) => res.json())
+								.then((res) => {
+									console.log(res);
+
+									if (res) {
+										message.success('Ваши данные отправленные. Скоро с вами свяжутся.');
+									} else {
+										message.error('Некорректные данные');
+										setName('');
+										setPhone('');
+									}
+								})
+						}>
+						Отправить
+					</button>
 				</div>
 			</div>
 		</>
